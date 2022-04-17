@@ -66,12 +66,22 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="100dp"
-        android:layout_marginStart="155dp"
+        android:layout_marginStart="50dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/edt_password"
         android:text="Login"
         android:layout_marginBottom="100dp"
         />
+
+    <Button
+        android:id="@+id/btnLoginGG"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_password"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="100dp"
+        android:text="Login with Google" />
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.login;
+package com.example.testandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.testandroid.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -20,7 +20,7 @@ public class SecondActivity extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
     private TextView name, email;
-    Button btnSignout;
+    Button btnSignOut;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,19 +28,20 @@ public class SecondActivity extends AppCompatActivity {
 
         name = findViewById(R.id.txtName);
         email = findViewById(R.id.txtEmail);
-        btnSignout = findViewById(R.id.btnSignOut);
+        btnSignOut = findViewById(R.id.btnSignOut);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this,gso);
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
         if(account != null){
             String personname = account.getDisplayName();
             String personEmail = account.getEmail();
             name.setText(personname);
             email.setText(personEmail);
         }
-        btnSignout.setOnClickListener(new View.OnClickListener() {
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signOut();
