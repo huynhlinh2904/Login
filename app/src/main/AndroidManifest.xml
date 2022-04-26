@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestAndroid">
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -24,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
+        <activity android:name=".RegisterActivity" />
     </application>
 
 </manifest>

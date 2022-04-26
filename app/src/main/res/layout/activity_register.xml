@@ -4,6 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".RegisterActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:layout_marginTop="30dp"
+            android:gravity="top"
+            android:layout_marginStart="150dp"
+            android:text="Register"/>
+        <EditText
+            android:id="@+id/edt_Regis_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_marginEnd="105dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="30dp"
+            />
+        <EditText
+            android:id="@+id/edt_Regis_Pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_marginEnd="105dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="30dp"
+            />
+        <EditText
+            android:id="@+id/edt_Regis_RePass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Re_password"
+            android:inputType="textPassword"
+            android:layout_marginEnd="105dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="30dp"
+            />
+        <EditText
+            android:id="@+id/edt_Regis_Phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:inputType="number"
+            android:layout_marginEnd="105dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="30dp"
+            />
+        <Button
+            android:id="@+id/btn_Register"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Register"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

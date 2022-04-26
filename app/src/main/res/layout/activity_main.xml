@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="bottom"
     android:background="@drawable/backgroud_login"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgLogin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/image_login"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="175dp"
+        />
 
     <TextView
         android:id="@+id/txtLogin"
@@ -15,6 +23,9 @@
         android:layout_height="40dp"
         android:layout_marginStart="155dp"
         android:text="LOGIN"
+        android:layout_below="@+id/imgLogin"
+        android:typeface="monospace"
+        android:layout_marginBottom="20dp"
         android:textSize="30dp" />
 
     <TextView
@@ -24,7 +35,7 @@
         android:layout_below="@+id/txtLogin"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="300dp"
-        android:text="Username:"
+        android:text="Email       :"
         android:textColor="@color/black"
         android:textSize="17dp"
         />
@@ -36,8 +47,7 @@
         android:layout_below="@+id/txtLogin"
         android:layout_marginStart="100dp"
         android:layout_marginTop="-10dp"
-        android:hint="Enter username"
-        />
+        android:hint="Enter username" />
 
     <TextView
         android:id="@+id/txtPassword"
@@ -83,5 +93,20 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="100dp"
         android:text="Login with Google" />
+    <CheckBox
+        android:id="@+id/cb_RememberPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/txtPassword"
+        android:text="Remember password"
+        />
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLoginGG"
+        android:text="Register"/>
 
 </RelativeLayout>

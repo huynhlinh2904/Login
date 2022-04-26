@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,9 +24,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnLogin, btnLoginGG;
+    private Button btnLogin, btnLoginGG, btnRegister;
     private EditText edtUsername, edtPassword;
     private FirebaseAuth mAuth;
+    private CheckBox cb_RememberPass;
+    private String email,password;
+
 
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
@@ -37,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edt_password);
         btnLogin = findViewById(R.id.btnLogin);
         btnLoginGG = findViewById(R.id.btnLoginGG);
+        cb_RememberPass = findViewById(R.id.cb_RememberPass);
+        btnRegister = findViewById(R.id.btnRegister);
+
 
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
@@ -48,19 +55,17 @@ public class MainActivity extends AppCompatActivity {
         if(account != null){
             navigateToSeCondActivity();
         }
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //forward layout
-//                if(edtUsername.getText().toString().equals("admin") && edtPassword.getText().toString().equals("123")){
-//                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-//                    startActivity(intent);
-//                }else  {
-//                    //show text
-//                    Toast.makeText(MainActivity.this, "wrong username or password", Toast.LENGTH_SHORT).show();
-//                }
-
                 //login email
                 login();
             }
@@ -68,12 +73,12 @@ public class MainActivity extends AppCompatActivity {
         btnLoginGG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    signInGG();
+                //Login GG
+                signInGG();
             }
         });
     }
     private void login(){
-        String email,password;
         email = edtUsername.getText().toString();
         password = edtPassword.getText().toString();
         if(TextUtils.isEmpty(email)){
